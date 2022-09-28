@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Login from "./routes/login/Login";
 import Overview from "./routes/overview/Overview";
 import RequireAuth from "./routes/require_auth/RequireAuth";
@@ -9,7 +9,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/login" element={<Login />}></Route>
-        <Route path="/" element={<RequireAuth>
+        <Route path="/overview" element={<RequireAuth>
           <Overview />
         </RequireAuth>} />
         <Route path="/tasks" element={<RequireAuth>
