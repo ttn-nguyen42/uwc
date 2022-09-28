@@ -1,8 +1,10 @@
+import { useEffect } from "react";
 import { Navigate } from "react-router-dom";
-import { useAuth } from "../../utils/hooks/UseAuth";
+import useAuth from "../../utils/hooks/UseAuth";
 
 export default function RequireAuth({ children }: RequireAuthProps) {
     const { isAuthenticated } = useAuth();
+
     return (isAuthenticated === true) ? children : <Navigate to="/login" replace />;
 }
 
