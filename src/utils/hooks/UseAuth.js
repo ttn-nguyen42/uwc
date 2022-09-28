@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Account, Accounts } from '../../account';
+import { Accounts } from '../../account';
 
 const LS_LOGIN_STATE = 'login_state';
 const LS_LOGGED_USERNAME = 'login_username';

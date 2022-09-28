@@ -1,9 +1,9 @@
 import useAuth from "../../utils/hooks/UseAuth"
-import React, { useEffect, useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { Navigate } from "react-router-dom";
 
 import style from "./Login.module.scss";
-import { Card, FilledInput, FormControl, FormHelperText, IconButton, InputAdornment, InputLabel, TextField } from "@mui/material";
+import { Card, FilledInput, FormControl, FormHelperText, IconButton, InputAdornment, InputLabel } from "@mui/material";
 import Button from "@mui/material/Button";
 
 import Visibility from '@mui/icons-material/Visibility';
@@ -16,9 +16,7 @@ export default function Login() {
     const [username, setUsername] = useState<string>("");
     const [password, setPassword] = useState<string>("");
 
-    const navigate = useNavigate();
-
-    return auth.isAuthenticated ? <Navigate to="/overview" /> : <div className={style.wrapper}>
+    return auth.isAuthenticated ? <Navigate to="/" /> : <div className={style.wrapper}>
         <Card variant="outlined" className={style.card}>
             Waste Collection System 2.0
             <FormControl sx={{ s: 1 }} variant="filled">
